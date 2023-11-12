@@ -70,7 +70,7 @@
     var intervalID;
 
     const updateLightPanel = () => {
-        if (currentDirection == "RIGHT"){
+        if (currentDirection === "RIGHT"){
             $(".light").css("background", "white");
             $(".light").eq(currentLight-1).css("background", "orange");
             $(".light").eq(currentLight++).css("background", "red");
@@ -91,7 +91,7 @@
 
     $("#start").on("click", () => {
         if (intervalID == null) {
-            intervalID = setInterval(updateLightPanel, 1000);
+            intervalID = setInterval(updateLightPanel, 200);
             $("#audio")[0].play();
         }
     });
